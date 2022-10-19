@@ -1,0 +1,11 @@
+mov.w #2D97h, R3
+			mov.w #6239h, R4
+			mov.w #0001h, R5
+
+			call #and_or
+
+and_or:
+	bic.b R3, R4
+	bis R4, R5
+	mov.w R5, &203Ch
+	ret;
