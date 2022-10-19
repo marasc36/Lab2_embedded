@@ -1,0 +1,39 @@
+mov.w #0005h, R4
+			mov.w #0004h, R5
+
+			cmp R5, R4
+
+			jl less;
+			jge greater;
+			jmp $;
+
+less:
+			call #less_function
+			jmp $;
+
+greater:
+			call #greater_function;
+			jmp $;
+
+less_function:
+			mov.w #10h, &2000h
+			mov.w #9h, &2002h
+			mov.w #8h, &2004h
+			mov.w #7h, &2006h
+			mov.w #6h, &2008h
+
+			sub #1h, R4;
+			ret;
+
+equal:
+			jmp $;
+
+greater_function:
+			mov.w #1h, &2000h
+			mov.w #2h, &2002h
+			mov.w #3h, &2004h
+			mov.w #4h, &2006h
+			mov.w #5h, &2008h
+
+			sub #1h, R4;
+			ret;
