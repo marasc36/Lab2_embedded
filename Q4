@@ -1,0 +1,15 @@
+  mov.w   #0006h,&2000h;
+            mov.w   #0009h,&2002h;
+            clr.w   &2006h;
+            clr.w   &2008h;
+            mov.w   &2002h,&2004h;
+            add.w   &2000h,&2004h;
+            cmp.w   #000Ah,&2004h;
+            jhs Greater
+            jlo Less
+Greater:
+            mov.w   &2000h,&2008h;
+            jmp $;
+Less:
+            mov.w   &2002h,&2006h;
+            jmp $;
