@@ -1,0 +1,23 @@
+			mov.b #0001h, R4;
+			mov.b #0001h, R5;
+			mov.b #0001h, R6;
+
+			and R6, R4;
+			and R6, R5;
+
+			cmp R4, R6;
+			jeq R4eqR6;
+			
+			jmp $;
+			
+
+
+R4eqR6:
+			cmp R5, R6;
+			jeq R5eqR6;
+			jmp $;
+
+
+R5eqR6:
+			mov.w #0ff0h, R9;
+			jmp $;
